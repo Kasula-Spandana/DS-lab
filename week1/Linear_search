@@ -1,0 +1,41 @@
+#include <stdio.h>
+int linear_search(int [],int,int);
+int main()
+{
+    int size,ele,result;
+    printf("Enter the size:\n");
+    scanf("%d",&size);
+    int arr[size];
+    printf("Enter the %d elements:\n",size);
+    for(int i = 0; i < size; i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the element:\n");
+    scanf("%d",&ele);
+    result = linear_search(arr,size,ele);
+    if(result == -1){
+        printf("Element is not found");
+    }
+    else{
+        printf("Element is found at %d position",result);
+    }
+    return 0;
+}
+
+int linear_search(int a[],int size,int n){
+    for(int i = 0; i < size; i++){
+        if(a[i] == n){
+            return i + 1;
+        }
+    }
+    return -1;
+}
+INPUT:
+Enter the size:
+5
+Enter the 5 elements:
+5 8 2 3 1
+Enter the element:
+2
+OUTPUT:
+Element is found at 3 position
