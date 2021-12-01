@@ -1,0 +1,196 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define size 5
+int top = -1,stack[size];
+void push(){
+     int ele;
+    printf("enter the element\n");
+    scanf("%d",&ele);
+    stack[++top] = ele;
+ }
+int pop(){
+     return (stack[top--]);
+}
+ int peek(){
+     return stack[top];
+ }
+void display(){
+     int i;
+     printf("elements are:\n");
+    for(i = top;i >= 0;i--){
+         printf("%d\n",stack[i]);
+     }
+ }
+ int main(){
+     int ch,ele;
+     while(1){
+         printf("1 - push\n 2 - pop\n 3 - peek\n 4 - display\n 5 - exit\n");
+         scanf("%d",&ch);
+        switch(ch){
+            case 1:
+                if(top == size - 1){
+                 printf("stack overflow\n");
+                }
+               else{
+                    push();
+                 }
+                 break;
+            case 2:
+                 if(top == -1){
+                     printf("stack underflow\n");
+                 }
+                 else{
+                     printf("deleted element : %d\n",pop());
+                }
+                 break;
+             case 3:
+                 if(top == -1){
+                        printf("stack underflow\n");
+                  }
+                  else{
+                      printf("topmost element is %d\n",peek());
+                  }
+                  break;
+              case 4:
+                  if(top == -1){
+                        printf("stack underflow\n");
+                  }
+                  else{
+                      display();
+                  }
+                  break;
+              case 5:
+                  exit(0);
+                  break;
+          }
+      }
+  }
+
+OUTPUT:
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+1
+enter the element
+1
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+1
+enter the element
+2
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+4
+elements are:
+2
+1
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+2
+deleted element : 2
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+2
+deleted element : 1
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+2
+stack underflow
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+1
+enter the element
+1
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+1
+enter the element
+2
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+1
+enter the element
+2
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+1
+enter the element
+4
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+1
+enter the element
+5
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+1
+stack overflow
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+4
+elements are:
+5
+4
+2
+2
+1
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+3
+topmost element is 5
+1 - push
+2 - pop
+3 - peek
+4 - display
+5 - exit
+5
+
+
+
+
+
+
+
+
+
